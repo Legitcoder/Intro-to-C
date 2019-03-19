@@ -60,7 +60,14 @@ void mem_copy(void *dest, const void *src, int n)
 */
 void *resize_memory(void *ptr, int old_size, int new_size)
 {
+    char *newPtr = (char *)ptr;
+    char *newAllocatedPtr = (char *)malloc(new_size * sizeof(char));
 
+    for(int i = 0; i < new_size; i++) {
+        newAllocatedPtr[i] = newPtr[i];
+    }
+
+    return newAllocatedPtr;
 }
 
 #ifndef TESTING
