@@ -69,11 +69,9 @@ char *find_string(char *haystack, char *needle)
     }
     while(*(haystackHead + h) != '\0') {
         if(*(haystackHead + h) == *needle) break;
-        //printf("%c\n", *(haystackHead + h));
         h++;
     }
     h++;
-    //printf("%c\n", *(haystackHead + h ));
     if(*(haystackHead + h) == '\0') return NULL;
     return haystack;
 }
